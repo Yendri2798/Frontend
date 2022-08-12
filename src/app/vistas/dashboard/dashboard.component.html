@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <div class="a">
+    <h3 >Total de ventas por cliente</h3>
+  </div>
+    
+  <select class="form-control">
+    <option *ngFor="let persona of personas">{{persona.Nombre}} {{persona.PrimerApellido}} {{persona.Cedula}}</option>
+  </select>
+  
+  <br><br>
+
+  <table class="table" table-hover>
+    <thead>
+      
+      <tr>
+        <th scope="col">ID Orden</th>
+        <th scope="col">ID Vendedor</th>
+        <th scope="col">ID Supermercado</th>
+        <th scope="col">Metodo Pago</th>
+        <th scope="col">Tipo Cambio</th>
+        <th scope="col">Fecha Orden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of ventas">
+        <th scope="row">{{venta.IdOrdenVenta}}</th>
+        <td>{{venta.Cedula}}</td>
+        <td>{{venta.IdSupermercado}}</td>
+        <td>{{venta.MetodoPago}}</td>
+        <td>{{venta.TipoCambio}}</td>
+        <td>{{venta.FechaOrden}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+<app-footer></app-footer>
